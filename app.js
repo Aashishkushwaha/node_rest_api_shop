@@ -14,9 +14,15 @@ mongoose.connect('mongodb+srv://shop-api-admin:' + process.env.MONGO_ATLAS_PW + 
   useMongoClient: true
 }
 );
+// this is to remove that deprecated warning
+// this will tell to use the default node.js promise instead of mongoose's promise
+mongoose.Promise = global.Promise;
 
 // Using the morgan middleware
 app.use(morgan('dev'));
+
+// this will make uploads folder accessible to every one
+app.use('/uploads/', express.static('uploads'));
 
 // Using the morgan middleware
 // we configure  body parser to handle which type of requests
