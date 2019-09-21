@@ -1,0 +1,1 @@
+Simple Rest API created with the help of Node.js, Express, MongoDB & Mongoose
